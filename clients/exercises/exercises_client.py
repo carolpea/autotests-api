@@ -2,7 +2,7 @@ from typing import TypedDict
 
 from httpx import Response
 
-from ..api_client import APIClient
+from clients.api_client import APIClient
 
 
 class GetExercisesQueryDict(TypedDict):
