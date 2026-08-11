@@ -8,7 +8,6 @@ from clients.private_http_builder import AuthenticationUserDict, get_private_htt
 from clients.users.private_users_client import User
 
 
-# Добавили описание структуры курса
 class Course(TypedDict):
     """
     Описание структуры курса.
@@ -43,7 +42,6 @@ class CreateCourseRequestDict(TypedDict):
     createdByUserId: str
 
 
-# Добавили описание структуры ответа на создание курса
 class CreateCourseResponseDict(TypedDict):
     """
     Описание структуры ответа создания курса.
@@ -114,7 +112,6 @@ class CoursesClient(APIClient):
         """
         return self.delete(f"/api/v1/courses/{course_id}")
 
-    # Добавили новый метод
     def create_course(self, request: CreateCourseRequestDict) -> CreateCourseResponseDict:
         response = self.create_course_api(request)
         return response.json()

@@ -6,7 +6,6 @@ from clients.api_client import APIClient
 from clients.private_http_builder import AuthenticationUserDict, get_private_http_client
 
 
-# Добавили описание структуры файла
 class File(TypedDict):
     """
     Описание структуры файла.
@@ -26,7 +25,6 @@ class CreateFileRequestDict(TypedDict):
     upload_file: str
 
 
-# Добавили описание структуры ответа на создание файла
 class CreateFileResponseDict(TypedDict):
     """
     Описание структуры ответа создания файла.
@@ -70,7 +68,6 @@ class FilesClient(APIClient):
         """
         return self.delete(f"/api/v1/files/{file_id}")
 
-    # Добавили новый метод
     def create_file(self, request: CreateFileRequestDict) -> CreateFileResponseDict:
         response = self.create_file_api(request)
         return response.json()
