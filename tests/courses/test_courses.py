@@ -67,4 +67,6 @@ class TestCourses:
 
         assert_status_code(response.status_code, HTTPStatus.OK)
         assert_create_course_response(request=request, response=response_data)
+
+        validate_json_schema(response.json(), response_data.model_json_schema())
         
